@@ -8,11 +8,14 @@
 #SBATCH --ntasks-per-node=12
 
 #SBATCH --mem=150GB
-#SBATCH --time=0-12:00:00
+#SBATCH --time=0-00:30:00
 
+## Slurm can send you updates via email
+#SBATCH --mail-type=BEGIN,END,FAIL         # ALL,NONE,BEGIN,END,FAIL,REQUEUE,..
+#SBATCH --mail-user=fansari4@gmu.edu     # Put your GMU email address here
 
-#SBATCH --output=mnist.%j.out
-#SBATCH --error=mnist.%j.err
+#SBATCH --output=/scratch/%u/mnist.%j.out
+#SBATCH --error=/scratch/%u/mnist.%j.err
 
 
 ## load modules
