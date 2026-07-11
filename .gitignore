@@ -3,5 +3,10 @@ tiny-stories/models/
 llama-summarize/models/
 gemma-4/datasets
 gemma-4/models
+<<<<<<< HEAD
 .ipynb_checkpoints/
 tiny-story-summaries-500k/
+=======
+tiny-story-summaries-500k
+
+>>>>>>> f62411a30a522769f67af840fa7abc06337026b8
