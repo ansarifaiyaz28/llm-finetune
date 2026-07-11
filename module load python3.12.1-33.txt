@@ -1,0 +1,41 @@
+salloc -p gpuq -q gpu --nodes=1 --ntasks-per-node=2 --gres=gpu:1g.10gb:1 --mem=15gb -t 0-02:00:00
+
+module load gnu12
+module load python/3.12.1-33
+module load cuda/12.6.3
+
+#vim
+#insert - i
+#save and exit - :wq
+
+python -m venv "$HOME/venvs/myproject"
+source "$HOME/venvs/myproject/bin/activate"
+
+python -m pip install --upgrade pip setuptools wheel
+
+# check python environment
+which python
+python --version
+
+# install below packages by writing them in to a requirements.txt
+
+python -m pip install -r requirements.txt
+
+##########
+#torch==2.13.0+cu126
+#torchvision
+#
+#transformers==5.13.0
+#datasets==5.0.0
+#accelerate==1.14.0
+#huggingface-hub==1.23.0
+#safetensors==0.8.0
+#sentencepiece>=0.2.0
+#
+#peft==0.19.1
+#trl==1.8.0
+#bitsandbytes==0.49.2
+##########
+
+
+python finetune.py
