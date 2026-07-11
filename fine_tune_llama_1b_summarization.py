@@ -365,17 +365,18 @@ for epoch in range(num_epochs):
 
         # break
 
-import matplotlib.pyplot as plt
+# The plot is not required when run on the cli environment.
+# import matplotlib.pyplot as plt
 
-plt.figure(figsize=(25, 8))
+# plt.figure(figsize=(25, 8))
 
-# Plotting
-plt.plot([(i+1) for i, loss in enumerate(losses)], [loss.item() for loss in losses], 'bo-', label='Training Loss')
-plt.title('Training Loss')
-plt.xlabel('Epochs')
-plt.ylabel('Loss')
-plt.legend()
-plt.show()
+# # Plotting
+# plt.plot([(i+1) for i, loss in enumerate(losses)], [loss.item() for loss in losses], 'bo-', label='Training Loss')
+# plt.title('Training Loss')
+# plt.xlabel('Epochs')
+# plt.ylabel('Loss')
+# plt.legend()
+# plt.show()
 
 """### Generated Loss Curve
 
