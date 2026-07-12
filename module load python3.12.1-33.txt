@@ -6,6 +6,8 @@ salloc -p gpuq -q gpu --nodes=4 --ntasks-per-node=2 --gres=gpu:A100.80gb:1 --mem
 salloc -p gpuq -q gpu --nodes=1 --ntasks-per-node=2 --gres=gpu:3g.40gb:4 --mem=50gb -t 0-02:00:00
 
 
+squeue -j 8890781 -o "%.18i %.10P %.10T %.10M %.10l %.6D %R"
+
 
 module load gnu12
 module load python/3.12.1-33

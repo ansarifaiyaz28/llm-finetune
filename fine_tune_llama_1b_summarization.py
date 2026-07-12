@@ -70,7 +70,7 @@ print(story_summary_pairs_with_prompt)
 # display the 10001th item in the dataset for story, summary and prompt
 print(story_summary_pairs_with_prompt['story'][10001])
 print(story_summary_pairs_with_prompt['summary'][10001])
-print(story_summary_pairs_with_prompt['prompt'][10001]))
+print(story_summary_pairs_with_prompt['prompt'][10001])
 
 def create_prompt_template(batched_dataset):
     return {
@@ -148,7 +148,7 @@ def dynamic_collate_fn(batch):
 
 train_dataloader = DataLoader(
     tokenized_dataset,
-    batch_size=8,
+    batch_size=1,
     shuffle=True,
     collate_fn=dynamic_collate_fn
 )
@@ -363,7 +363,7 @@ for epoch in range(num_epochs):
         progress_bar.update(1)
         progress_bar.set_postfix({"loss": f"{loss.item():.4f}"})
 
-        # break
+        break
 
 # The plot is not required when run on the cli environment.
 # import matplotlib.pyplot as plt
